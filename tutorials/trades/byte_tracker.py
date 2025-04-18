@@ -185,7 +185,7 @@ class BYTETracker(object):
         detections = []
         detections_second = []
         
-        scores = np.array([item['score'] for item in results if item['class'] == 1], np.float32)
+        scores = np.array([item['score'] for item in results if item['class'] == 1], float)
         bboxes = np.vstack([item['bbox'] for item in results if item['class'] == 1])  # N x 4, x1y1x2y2
         
         remain_inds = scores >= self.args.track_thresh

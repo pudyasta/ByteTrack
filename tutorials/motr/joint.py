@@ -105,7 +105,7 @@ class DetMOTDetection:
         w, h = img._size
         assert w > 0 and h > 0, "invalid image {} with shape {} {}".format(img_path, w, h)
         if osp.isfile(label_path):
-            labels0 = np.loadtxt(label_path, dtype=np.float32).reshape(-1, 6)
+            labels0 = np.loadtxt(label_path, dtype=float).reshape(-1, 6)
 
             # normalized cewh to pixel xyxy format
             labels = labels0.copy()
